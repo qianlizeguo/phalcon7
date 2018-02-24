@@ -8,13 +8,18 @@ defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
 return new \Phalcon\Config([
     'databases' => [
-        'phalcon7' => [
+        'db_test' => [
             'adapter'     => 'Mysql',
-            'host'        => 'localhost',
-            'username'    => 'root',
-            'password'    => 'root',
+            'host'     => '127.0.0.1',
+            'username' => 'root',
+            'password' => 'root',
+            'port'     => '3306',
             'dbname'      => 'phalcon7',
-            'charset'     => 'utf8',
+            'options'  => [
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4',
+                PDO::ATTR_EMULATE_PREPARES   => false,
+                PDO::ATTR_STRINGIFY_FETCHES  => false,
+            ]
         ],
     ],
 

@@ -130,7 +130,6 @@ foreach ((array) $di->get('config')->databases as $key => $database) {
     });
 }
 
-
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise
  */
