@@ -6,6 +6,10 @@ error_reporting(E_ALL);
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
 
+define('APP_NAME', 'car'); // 设置项目名称,给redis加前缀
+define('APP_ENV', getenv('VYF_APPLICATION_ENV')); // 环境变量
+define('TIME_FIX', 1462032000);
+
 try {
 
     /**

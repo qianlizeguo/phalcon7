@@ -11,7 +11,7 @@ return new \Phalcon\Config([
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
-        'password'    => '',
+        'password'    => 'root',
         'dbname'      => 'phalcon7',
         'charset'     => 'utf8',
     ],
@@ -25,5 +25,7 @@ return new \Phalcon\Config([
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
         'baseUri'        => '/phalcon7/',
-    ]
+    ],
+
+    'logPath'          => '/app/logs/'
 ]);
