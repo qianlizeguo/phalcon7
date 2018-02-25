@@ -1,8 +1,7 @@
 <?php
-namespace Common;
+namespace App\Library\Redis;
 
 use Redis;
-use Exception;
 
 /**
  * Redis读写封装

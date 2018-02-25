@@ -13,6 +13,8 @@ $loader->registerNamespaces([
 
 $loader->registerDirs([
     $controllerDir,
+    $config->application->libraryDir
+
 ])->register();
 
 //$loader->registerDirs(
