@@ -7,6 +7,7 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Direct as Flash;
+use Common\BeehiveRedis;
 
 function is_online()
 {
@@ -127,6 +128,15 @@ foreach ((array) $di->get('config')->databases as $key => $database) {
         $data = $database->toArray();
         unset($data['adapter']);
         return new $class($data);
+    });
+}
+
+// 设置redis return $app->redisCache
+foreach ((array) $di->get('config')->redis as $k => $v) {
+    $di->set('redis' . $k, function () use ($v) {
+        $objRedis = new BeehiveRedis($v->toArray());
+
+        return $objRedis;
     });
 }
 

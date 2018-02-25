@@ -23,6 +23,13 @@ return new \Phalcon\Config([
         ],
     ],
 
+    'redis'     => [
+        'User'    => array(
+            'host'     => '127.0.0.1',
+            'port'     => 6379,
+        ),
+    ],
+
     'application' => [
         'appDir'         => APP_PATH . '/',
         'controllersDir' => APP_PATH . '/controllers/',
